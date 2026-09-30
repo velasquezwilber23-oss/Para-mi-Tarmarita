@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #10090d;
+    --background-light: #1b0d13;
+    --card: rgba(255, 255, 255, 0.055);
+    --border: rgba(255, 190, 205, 0.16);
+    --pink: #ff8fab;
+    --pink-light: #ffc2d1;
+    --text: #fff5f7;
+    --text-soft: #d9c7cc;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(164, 38, 75, 0.25), transparent 35%),
+        linear-gradient(135deg, var(--background), #090609);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    overflow-x: hidden;
+}
+
+main {
+    width: min(900px, 92%);
+    margin: auto;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.small-heart {
+    font-size: 54px;
+    color: var(--pink);
+    animation: pulse 2.5s infinite;
+    margin-bottom: 15px;
+}
+
+.mini-title,
+.section-label {
+    font-family: Arial, sans-serif;
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: var(--pink);
+}
+
+.hero h1 {
+    font-size: clamp(60px, 13vw, 105px);
+    font-weight: 400;
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.subtitle {
+    color: var(--pink-light);
+    font-size: 20px;
+    margin-bottom: 28px;
+}
+
+.intro {
+    max-width: 600px;
+    color: var(--text-soft);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.main-button,
+.secret-button {
+    margin-top: 35px;
+    border: 1px solid rgba(255, 143, 171, 0.5);
+    background: rgba(255, 143, 171, 0.12);
+    color: white;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-button:hover,
+.secret-button:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 143, 171, 0.25);
+    box-shadow: 0 10px 35px rgba(255, 90, 130, 0.15);
+}
+
+#contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-bottom: 80px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    padding: 45px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+}
+
+.section-icon {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 13px;
+}
+
+.card h2 {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 400;
+    margin: 10px 0 25px;
+}
+
+.letter p {
+    color: var(--text-soft);
+    line-height: 1.9;
+    font-size: 17px;
+    margin: 17px 0;
+}
+
+.signature {
+    color: var(--pink-light) !important;
+    font-style: italic;
+    margin-top: 30px !important;
+}
+
+.counter-card {
+    text-align: center;
+}
+
+.counter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 35px 0 20px;
+}
+
+.counter div {
+    padding: 20px 8px;
+    border-radius: 18px;
+    background: rgba(255, 143, 171, 0.07);
+    border: 1px solid rgba(255, 143, 171, 0.1);
+}
+
+.counter span {
+    display: block;
+    font-size: clamp(28px, 6vw, 48px);
+    color: var(--pink-light);
+}
+
+.counter small {
+    color: var(--text-soft);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.counter-note,
+.hint,
+.photo-message,
+.edit-note {
+    color: var(--text-soft);
+    line-height: 1.7;
+}
+
+.youtube-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-top: 25px;
+    background: #000;
+}
+
+.youtube-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.edit-note {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    opacity: 0.65;
+    margin-top: 16px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.photo-placeholder {
+    min-height: 230px;
+    border: 1px dashed rgba(255, 143, 171, 0.3);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--pink-light);
+    background: rgba(255, 255, 255, 0.025);
+    transition: 0.3s;
+}
+
+.photo-placeholder:hover {
+    background: rgba(255, 143, 171, 0.07);
+    transform: translateY(-3px);
+}
+
+.photo-placeholder span {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.photo-placeholder p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.secret-card {
+    text-align: center;
+}
+
+.secret-message {
+    display: none;
+    margin: 35px auto 0;
+    max-width: 650px;
+    animation: appear 0.8s ease;
+}
+
+.secret-message.show {
+    display: block;
+}
+
+.secret-message p {
+    color: var(--text-soft);
+    line-height: 1.9;
+    font-size: 17px;
+    margin: 15px 0;
+}
+
+.secret-message .final-line {
+    color: var(--pink-light);
+    font-style: italic;
+    font-size: 19px;
+}
+
+footer {
+    text-align: center;
+    color: #806a72;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    padding: 0 20px 40px;
+}
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    color: rgba(255, 143, 171, 0.45);
+    animation: floatUp linear forwards;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-15vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 650px) {
+    .card {
+        padding: 30px 22px;
+    }
+
+    .counter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-placeholder {
+        min-height: 200px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+}
+
+.song-box {
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 25px;
+    border-radius: 20px;
+    background: rgba(255, 143, 171, 0.06);
+    border: 1px solid rgba(255, 143, 171, 0.15);
+}
+
+.song-text {
+    color: var(--pink-light);
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.youtube-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: rgba(255, 143, 171, 0.16);
+    border: 1px solid rgba(255, 143, 171, 0.5);
+    border-radius: 999px;
+    padding: 14px 25px;
+    transition: 0.3s;
+}
+
+.youtube-button:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 143, 171, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 90, 130, 0.15);
+}
